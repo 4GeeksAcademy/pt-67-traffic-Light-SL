@@ -34,10 +34,12 @@ const Home = () => {
 	};
 
 	return (
-		<div className="trafficLight d-flex row justify-content-center ">
-			<button className={`btn btn-danger rounded-circle ${shadowDanger}`} onClick={activeShadowDanger}>R</button>
-			<button className={`btn btn-warning rounded-circle ${shadowWarning}`} onClick={activeShadowWarning}>W</button>
-			<button className={`btn btn-success rounded-circle ${shadowGreen}`} onClick={activeShadowGreen}>S</button>
+		<div className="d-flex justify-content-center">
+			<div className="trafficLight">
+				<button className={`btn btn-danger rounded-circle ${shadowDanger}`} onClick={activeShadowDanger}>R</button>
+				<button className={`btn btn-warning rounded-circle ${shadowWarning}`} onClick={activeShadowWarning}>W</button>
+				<button className={`btn btn-success rounded-circle ${shadowGreen}`} onClick={activeShadowGreen}>S</button>
+			</div>
 		</div>
 	);
 };
