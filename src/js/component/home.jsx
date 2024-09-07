@@ -1,47 +1,43 @@
-import React,{useState} from "react";
+import React, { useState } from "react";
 
 //include images into your bundle
-import rigoImage from "../../img/rigo-baby.jpg";
+
 
 //create your first component
 const Home = () => {
 
-	const [shadowDanger, setShadowDanger] = useState("shadow-lg");
-	const [shadowWarning, setShadowWarning] = useState("shadow-lg");
-	const [shadowGreen, setShadowGreen] = useState("shadow-lg");
+	const [ShadowGreen, setShadowGreen] = useState();
+	const [ShadowWarning, setShadowWarning] = useState();
+	const [ShadowDanger, setShadowDanger] = useState();
 
-	function activeShadowDanger() {
-		console.log("entramos en on Click")
-		setShadowDanger("shadow-lg")
-		setShadowWarning("")
+	function ActiveDanger() {
+		setShadowDanger("redshine")
 		setShadowGreen("")
-	};
-
-	function activeShadowWarning() {
-		console.log("entramos en on Click")
-
-		setShadowDanger("")
-		setShadowWarning("shadow-lg")
-		setShadowGreen("")
-	};
-
-	function activeShadowGreen() {
-		console.log("entramos en on Click")
-
-		setShadowDanger("")
 		setShadowWarning("")
-		setShadowGreen("shadow-lg")
 	};
+	function ActiveWarning() {
+		setShadowDanger("")
+		setShadowGreen("")
+		setShadowWarning("ambershine")
+
+	};
+	function ActiveGreen() {
+		setShadowDanger("")
+		setShadowGreen("greenshine")
+		setShadowWarning("")
+	};
+
 
 	return (
-		<div className="d-flex justify-content-center">
+		
+			
 			<div className="trafficLight">
-				<button className={`btn btn-danger rounded-circle ${shadowDanger}`} onClick={activeShadowDanger}>R</button>
-				<button className={`btn btn-warning rounded-circle ${shadowWarning}`} onClick={activeShadowWarning}>W</button>
-				<button className={`btn btn-success rounded-circle ${shadowGreen}`} onClick={activeShadowGreen}>S</button>
+				<button type="button" className={`red ${ShadowDanger}`} onClick={ActiveDanger}></button>
+				<button type="button" className={`amber ${ShadowWarning}`} onClick={ActiveWarning}></button>
+				<button type="button" className={`green ${ShadowGreen}`} onClick={ActiveGreen}></button>
 			</div>
-		</div>
-	);
-};
 
+	);
+
+};
 export default Home;
